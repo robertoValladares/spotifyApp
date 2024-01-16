@@ -25,12 +25,12 @@ export class SpotifyService {
   }
 
 
-  // getNewReleases() {
+  getNewReleases() {
 
-  //   return this.getQuery('browse/new-releases?limit=20')
-  //             .pipe( map( data => data['albums'].items ));
+    return this.getQuery('browse/new-releases?limit=20')
+              .pipe( map( (data: any) => data['albums'].items ));
 
-  // }
+  }
 
   // getArtists( termino: string ) {
 
