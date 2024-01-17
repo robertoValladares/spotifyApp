@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
+import { LoadingComponent } from '../shared/loading/loading.component';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [LoadingComponent, CardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

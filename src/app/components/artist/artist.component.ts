@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SpotifyService } from '../../services/spotify.service';
+import { NoimagePipe } from '../../pipes/noimage.pipe';
+import { LoadingComponent } from '../shared/loading/loading.component';
 
 @Component({
   selector: 'app-artist',
   standalone: true,
-  imports: [],
+  imports: [NoimagePipe, LoadingComponent],
   templateUrl: './artist.component.html',
   styleUrl: './artist.component.css'
 })
