@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { NoimagePipe } from '../../pipes/noimage.pipe';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [],
+  imports: [ NoimagePipe ],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
