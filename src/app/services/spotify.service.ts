@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { map } from 'rxjs/operators';
+import { pipe } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { map } from 'rxjs/operators';
 export class SpotifyService {
 
   constructor(private http: HttpClient) {
-    console.log('Spotify Service Listo');
+    console.log('Spotify Service ready');
   }
 
   getQuery( query: string ) {
@@ -32,25 +33,25 @@ export class SpotifyService {
 
   }
 
-  // getArtists( termino: string ) {
+  getArtists( termino: string ) {
 
-  //   return this.getQuery(`search?q=${ termino }&type=artist&limit=15`)
-  //               .pipe( map( data => data['artists'].items));
-
-  // }
-
-  getArtist( id: string ) {
-
-    return this.getQuery(`artists/${ id }`);
-                // .pipe( map( data => data['artists'].items));
+    return this.getQuery(`search?q=${ termino }&type=artist&limit=15`)
+                .pipe( map( (data: any) => data['artists'].items));
 
   }
 
-  // getTopTracks( id: string ) {
+  getArtist( id: string ) {
 
-  //   return this.getQuery(`artists/${ id }/top-tracks?country=us`)
-  //               .pipe( map( data => data['tracks']));
+    return this.getQuery(`artists/${ id }`)
+                .pipe( map( (data: any)=> data['artists'].items));
 
-  // // }
+  }
+
+  getTopTracks( id: string ) {
+
+    return this.getQuery(`artists/${ id }/top-tracks?country=us`)
+                .pipe( map( (data: any) => data['tracks']));
+
+  }
 
 }
