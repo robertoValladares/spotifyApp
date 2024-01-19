@@ -4,6 +4,7 @@ import { DomSanitizer  } from '@angular/platform-browser';
 
 @Pipe({
   name: 'domseguro',
+  standalone: true,
 })
 export class DomseguroPipe implements PipeTransform {
 
