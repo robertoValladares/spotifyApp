@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { SpotifyService } from '../../services/spotify.service';
 import { NoimagePipe } from '../../pipes/noimage.pipe';
 import { LoadingComponent } from '../shared/loading/loading.component';
+import { DomseguroPipe } from '../../pipes/domseguro.pipe';
 
 @Component({
   selector: 'app-artist',
   standalone: true,
-  imports: [NoimagePipe, LoadingComponent],
+  imports: [NoimagePipe, LoadingComponent, DomseguroPipe],
   templateUrl: './artist.component.html',
   styleUrl: './artist.component.css'
 })
