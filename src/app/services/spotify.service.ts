@@ -1,16 +1,35 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import { map } from 'rxjs/operators';
-import { pipe } from 'rxjs';
+import { Observable, pipe } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpotifyService {
+  
+  private clientId = '0cea443ec962411d917ac7918d61dd4a';
+  private clientSecret = '3df0badba5c84a9ea0950267595c2550';
+  private tokenUrl = 'https://accounts.spotify.com/api/token';
 
   constructor(private http: HttpClient) {
     console.log('Spotify Service ready');
+  }
+
+
+
+  getToken(): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+    });
+
+    const body = new HttpParams()
+      .set('grant_type', 'client_credentials')
+      .set('client_id', this.clientId)
+      .set('client_secret', this.clientSecret);
+
+    return this.http.post(this.tokenUrl, body.toString(), { headers });
   }
 
   getQuery( query: string ) {
