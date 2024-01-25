@@ -9,8 +9,8 @@ import { Observable, pipe } from 'rxjs';
 })
 export class SpotifyService {
   
-  private clientId = '0cea443ec962411d917ac7918d61dd4a';
-  private clientSecret = '3df0badba5c84a9ea0950267595c2550';
+  private clientId = '';
+  private clientSecret = '';
   private tokenUrl = 'https://accounts.spotify.com/api/token';
 
   constructor(private http: HttpClient) {
