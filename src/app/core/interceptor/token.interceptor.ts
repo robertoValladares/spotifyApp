@@ -5,7 +5,7 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpHeaders } from '@angular
 export class tokenInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler) {
 
-    const token = 'BQDsnU8IhPdDKrUXuWq7FVMlrNmZrmMJiSyG6fRESINYgAJBBpnLiQ6GThLMuQsxqlLJVavErt4qQAgzvrA';
+    const token = 'BQCCeFeNPWUEfWm8I94-d5Yvq5-EmXYzE5cR5GtjHjF8sBmZjx4uTbcyMccxS9ejtC6cpicuOlSkhRncx7YLbZkYnS4GaqzCDHglb2hVbIwSeXhuvVA';
 
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
